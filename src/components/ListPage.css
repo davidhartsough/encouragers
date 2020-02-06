@@ -1,0 +1,21 @@
+.action-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.action {
+  color: #555;
+  text-decoration: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  outline: none;
+  width: 2rem;
+  height: 2rem;
+}
+.action:hover {
+  color: #000;
+}
+.empty {
+  margin-top: 1.5rem;
+  text-align: center;
+}

@@ -1,0 +1,17 @@
+.search-bar {
+  position: relative;
+  margin: 0.5rem 0;
+}
+.icon-prefix {
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-input {
+  padding-left: 2.25rem;
+}
