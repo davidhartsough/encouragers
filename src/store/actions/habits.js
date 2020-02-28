@@ -1,4 +1,4 @@
-import { habits as db } from "../../db";
+import { habits as db } from "../db";
 
 const setLoading = (loading = true) => ({
   type: "set_loading",
@@ -10,13 +10,10 @@ const getHabits = data => ({
   payload: { data }
 });
 
-let hasFetched = Boolean(window.sessionStorage.getItem("hasFetchedHabits"));
-export const fetchHabits = () => dispatch => {
+export const fetchHabits = (hasFetched = false) => dispatch => {
   if (hasFetched) return dispatch(setLoading(false));
   dispatch(setLoading());
   return db.fetchHabits().then(data => {
-    hasFetched = true;
-    window.sessionStorage.setItem("hasFetchedHabits", true);
     return dispatch(getHabits(data));
   });
 };

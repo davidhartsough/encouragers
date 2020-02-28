@@ -1,4 +1,4 @@
-import { groups as db } from "../../db";
+import { groups as db } from "../db";
 
 const setLoading = (loading = true) => ({
   type: "set_loading",
@@ -10,13 +10,10 @@ const getGroups = data => ({
   payload: { data }
 });
 
-let hasFetched = Boolean(window.sessionStorage.getItem("hasFetchedGroups"));
-export const fetchGroups = () => dispatch => {
+export const fetchGroups = (hasFetched = false) => dispatch => {
   if (hasFetched) return dispatch(setLoading(false));
   dispatch(setLoading());
   return db.fetchGroups().then(data => {
-    hasFetched = true;
-    window.sessionStorage.setItem("hasFetchedGroups", true);
     return dispatch(getGroups(data));
   });
 };

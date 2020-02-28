@@ -1,4 +1,4 @@
-import { profile as db } from "../../db";
+import { profile as db } from "../db";
 
 const setLoading = (loading = true) => ({
   type: "set_loading",
@@ -10,13 +10,10 @@ const getProfile = data => ({
   payload: { data }
 });
 
-let hasFetched = Boolean(window.sessionStorage.getItem("hasFetchedProfile"));
-export const fetchProfile = () => dispatch => {
+export const fetchProfile = (hasFetched = false) => dispatch => {
   if (hasFetched) return dispatch(setLoading(false));
   dispatch(setLoading());
   return db.fetchProfile().then(data => {
-    hasFetched = true;
-    window.sessionStorage.setItem("hasFetchedProfile", true);
     return dispatch(getProfile(data));
   });
 };

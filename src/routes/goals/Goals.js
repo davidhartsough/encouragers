@@ -1,17 +1,25 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { fetchGoals } from "../../store/actions/goals";
-import PageLoader from "../../components/PageLoader";
+import Fetcher from "../../components/Fetcher";
 import ListPage from "../../components/ListPage";
 
-function Goals({ goals, fetchGoals }) {
-  useEffect(() => {
-    if (!Boolean(window.sessionStorage.getItem("hasFetchedGoals"))) {
-      fetchGoals();
-    }
-  }, [fetchGoals]);
-  if (goals.loading) return <PageLoader />;
-  return <ListPage type="goal" data={goals.data} />;
+function Goals(props) {
+  return (
+    <Fetcher {...props}>
+      <ListPage type="goal" data={props.data} />
+    </Fetcher>
+  );
 }
 
-export default connect(({ goals }) => ({ goals }), { fetchGoals })(Goals);
+const mapStateToProps = ({ goals: { hasFetched, loading, data } }) => ({
+  hasFetched,
+  loading,
+  data
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchData: () => dispatch(fetchGoals())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Goals);

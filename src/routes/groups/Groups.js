@@ -1,17 +1,25 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { fetchGroups } from "../../store/actions/groups";
-import PageLoader from "../../components/PageLoader";
+import Fetcher from "../../components/Fetcher";
 import ListPage from "../../components/ListPage";
 
-function Groups({ groups, fetchGroups }) {
-  useEffect(() => {
-    if (!Boolean(window.sessionStorage.getItem("hasFetchedGroups"))) {
-      fetchGroups();
-    }
-  }, [fetchGroups]);
-  if (groups.loading) return <PageLoader />;
-  return <ListPage type="group" data={groups.data} />;
+function Groups(props) {
+  return (
+    <Fetcher {...props}>
+      <ListPage type="group" data={props.data} />
+    </Fetcher>
+  );
 }
 
-export default connect(({ groups }) => ({ groups }), { fetchGroups })(Groups);
+const mapStateToProps = ({ groups: { hasFetched, loading, data } }) => ({
+  hasFetched,
+  loading,
+  data
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchData: () => dispatch(fetchGroups())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Groups);

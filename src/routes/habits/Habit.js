@@ -1,19 +1,31 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { fetchHabits } from "../../store/actions/habits";
-import PageLoader from "../../components/PageLoader";
-import NotFound from "../../components/NotFound";
+import Fetcher from "../../components/Fetcher";
+import IdChecker from "../../components/IdChecker";
 
-function Habit({ habits, fetchHabits, id }) {
-  useEffect(() => {
-    if (!Boolean(window.sessionStorage.getItem("hasFetchedHabits"))) {
-      fetchHabits();
-    }
-  }, [fetchHabits]);
-  if (habits.loading) return <PageLoader />;
-  const habit = habits.data.find(h => h.id === id);
-  if (habit === undefined) return <NotFound type="habit" />;
+function Habit({ habit }) {
   return <h1>Habit: {habit.name}</h1>;
 }
 
-export default connect(({ habits }) => ({ habits }), { fetchHabits })(Habit);
+function Page(props) {
+  return (
+    <Fetcher {...props}>
+      <IdChecker {...props} type="habit">
+        {habit => <Habit habit={habit} />}
+      </IdChecker>
+    </Fetcher>
+  );
+}
+
+const mapStateToProps = ({ habits: { hasFetched, loading, data } }) => ({
+  hasFetched,
+  loading,
+  data
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchData: () => dispatch(fetchHabits())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

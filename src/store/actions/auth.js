@@ -1,4 +1,4 @@
-import { auth as db } from "../../db";
+import { auth as db } from "../db";
 
 const requestAuth = () => ({ type: "request_auth" });
 

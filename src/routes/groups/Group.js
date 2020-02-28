@@ -1,19 +1,31 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { fetchGroups } from "../../store/actions/groups";
-import PageLoader from "../../components/PageLoader";
-import NotFound from "../../components/NotFound";
+import Fetcher from "../../components/Fetcher";
+import IdChecker from "../../components/IdChecker";
 
-function Group({ groups, fetchGroups, id }) {
-  useEffect(() => {
-    if (!Boolean(window.sessionStorage.getItem("hasFetchedGroups"))) {
-      fetchGroups();
-    }
-  }, [fetchGroups]);
-  if (groups.loading) return <PageLoader />;
-  const group = groups.data.find(g => g.id === id);
-  if (group === undefined) return <NotFound type="group" />;
+function Group({ group }) {
   return <h1>Group: {group.name}</h1>;
 }
 
-export default connect(({ groups }) => ({ groups }), { fetchGroups })(Group);
+function Page(props) {
+  return (
+    <Fetcher {...props}>
+      <IdChecker {...props} type="group">
+        {group => <Group group={group} />}
+      </IdChecker>
+    </Fetcher>
+  );
+}
+
+const mapStateToProps = ({ groups: { hasFetched, loading, data } }) => ({
+  hasFetched,
+  loading,
+  data
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchData: () => dispatch(fetchGroups())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

@@ -1,5 +1,6 @@
 const initialState = {
   loading: true,
+  hasFetched: false,
   data: []
 };
 
@@ -16,6 +17,7 @@ export default function goals(state = initialState, action) {
       const { data } = action.payload;
       return {
         data,
+        hasFetched: true,
         loading: false
       };
     }

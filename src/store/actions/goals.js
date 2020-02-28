@@ -1,4 +1,4 @@
-import { goals as db } from "../../db";
+import { goals as db } from "../db";
 
 const setLoading = (loading = true) => ({
   type: "set_loading",
@@ -10,13 +10,10 @@ const getGoals = data => ({
   payload: { data }
 });
 
-let hasFetched = Boolean(window.sessionStorage.getItem("hasFetchedGoals"));
-export const fetchGoals = () => dispatch => {
+export const fetchGoals = (hasFetched = false) => dispatch => {
   if (hasFetched) return dispatch(setLoading(false));
   dispatch(setLoading());
   return db.fetchGoals().then(data => {
-    hasFetched = true;
-    window.sessionStorage.setItem("hasFetchedGoals", true);
     return dispatch(getGoals(data));
   });
 };
