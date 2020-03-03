@@ -1,3 +1,8 @@
+const mockGroup = {
+  id: "asdf",
+  name: ""
+};
+
 const mock = [
   {
     id: "asdf",
