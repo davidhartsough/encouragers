@@ -1,3 +1,12 @@
+const subgoal = {
+  name: "",
+  target: "",
+  dateTime: null,
+  verification: "",
+  reward: "",
+  timeSlots: [],
+
+}
 const initialState = {
   groups: [],
   viewers: [],
@@ -10,17 +19,15 @@ const initialState = {
   benifits: [],
   subgoals: [],
   hindrances: [],
-  checkInRecurrence: "",
-  checkInTime: "",
   endDate: "",
+  endTime: "",
   associatedHabits: [],
-  enviroment: "",
-  timeNeeded: "",
-  timeNeededUnit: "",
   strategy: "",
-  measurementType: "",
+  firstStep: "",
+  startTime: "",
   measurementUnits: "",
   baseline: null,
   target: null,
-  mainReward: ""
+  mainReward: "",
+  mainVerification: ""
 };
