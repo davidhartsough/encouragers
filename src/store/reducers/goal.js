@@ -4,9 +4,8 @@ const subgoal = {
   dateTime: null,
   verification: "",
   reward: "",
-  timeSlots: [],
-
-}
+  timeSlots: []
+};
 const initialState = {
   groups: [],
   viewers: [],

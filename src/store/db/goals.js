@@ -4,9 +4,8 @@ const subgoal = {
   dateTime: null,
   verification: "",
   reward: "",
-  timeSlots: [],
-
-}
+  timeSlots: []
+};
 const mockRunningGoal = {
   groups: ["runningClub"],
   viewers: ["steve", "stephanie"],
@@ -16,11 +15,18 @@ const mockRunningGoal = {
   wellbeingDomains: ["exercise", "accomplishment"],
   resources: ["runnersworld.com"],
   meaning: "Proving to myself I matter as a person",
-  benifits: ["cardio-vascular health", "feeling of accomplisment", "big running legs", "booty", "lose weight", "spend time outdoors"],
+  benifits: [
+    "cardio-vascular health",
+    "feeling of accomplisment",
+    "big running legs",
+    "booty",
+    "lose weight", "spend time outdoors"
+  ],
   subgoals: [
     {
       name: "Week 1",
-      strategy: "run 5 times this week alternating flat and hills, with one long run on the weekend. dont over-do it.",
+      strategy:
+        "run 5 times this week alternating flat and hills, with one long run on the weekend. dont over-do it.",
       target: "",
       subtasks: [
         {
@@ -29,7 +35,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-02",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -38,7 +44,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-03",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -47,7 +53,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-04",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -56,7 +62,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-05",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -65,19 +71,20 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-05",
-            completed: false,
+            completed: false
           }
-        },
+        }
       ],
       dateTime: "2020-03-07T12:00:00",
       verification: "",
       reward: "no",
       timeSlots: null,
-      completed: false,
+      completed: false
     },
     {
       name: "Week 2",
-      strategy: "run 5 times this week alternating flat and hills, with one long run on the weekend. dont over-do it.",
+      strategy:
+        "run 5 times this week alternating flat and hills, with one long run on the weekend. dont over-do it.",
       target: "",
       subtasks: [
         {
@@ -86,7 +93,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-09",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -95,7 +102,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-10",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -104,7 +111,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-11",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -113,7 +120,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-12",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -122,19 +129,20 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-14",
-            completed: false,
+            completed: false
           }
-        },
+        }
       ],
       dateTime: "2020-03-15T12:00:00",
       verification: "",
       reward: "no",
       timeSlots: null,
-      completed: false,
+      completed: false
     },
     {
       name: "Week 3",
-      strategy: "run 5 times this week alternating flat and hills, with one long run on the weekend. dont over-do it.",
+      strategy:
+        "run 5 times this week alternating flat and hills, with one long run on the weekend. dont over-do it.",
       target: "",
       subtasks: [
         {
@@ -143,7 +151,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-16",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -152,7 +160,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-17",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -161,7 +169,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-18",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -170,7 +178,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-19",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -179,19 +187,20 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-21",
-            completed: false,
+            completed: false
           }
-        },
+        }
       ],
       dateTime: "2020-03-22T12:00:00",
       verification: "",
       reward: "no",
       timeSlots: null,
-      completed: false,
+      completed: false
     },
     {
       name: "Week 4",
-      strategy: "run 5 times this week alternating flat and hills, with one long run on the weekend. dont over-do it.",
+      strategy:
+        "run 5 times this week alternating flat and hills, with one long run on the weekend. dont over-do it.",
       target: "",
       subtasks: [
         {
@@ -200,7 +209,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-23",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -209,7 +218,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-24",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -218,7 +227,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-25",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -227,7 +236,7 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-26",
-            completed: false,
+            completed: false
           }
         },
         {
@@ -236,22 +245,23 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-28",
-            completed: false,
+            completed: false
           }
-        },
+        }
       ],
       dateTime: "2020-03-29T12:00:00",
       verification: "",
       reward: "no",
       timeSlots: null,
-      completed: false,
-    },
+      completed: false
+    }
   ],
   hindrances: ["weather", "injury", "bad-gear", "fatigue", "Time Commitment"],
   endDate: "2020-03-31",
   endTime: "17:00",
   associatedHabits: ["exercise1234"],
-  strategy: "Train 3-5 times a week to improve cardio-vascular endurance. focus on pacing to reduce risk of engery and burn out. Run a base line mile and set your pace 1-2 mins slower than your base line. Gear: Good shoes (don't skimp), running shorts, soft shirt, water (camelbak, bottle belt, etc), gear for poor weather (rain jacket, pants, gloves), running socks. Get a buddy, it makes things better",
+  strategy:
+    "Train 3-5 times a week to improve cardio-vascular endurance. focus on pacing to reduce risk of engery and burn out. Run a base line mile and set your pace 1-2 mins slower than your base line. Gear: Good shoes (don't skimp), running shorts, soft shirt, water (camelbak, bottle belt, etc), gear for poor weather (rain jacket, pants, gloves), running socks. Get a buddy, it makes things better",
   firstStep: "Get my gear, set it by my door",
   startTime: "Today",
   measurementUnits: "",
@@ -259,30 +269,30 @@ const mockRunningGoal = {
   target: null,
   mainReward: "Go out to dinner at yoi-tomo all you can eat sushi",
   mainVerification: "Race Results",
-  completed: false,
+  completed: false
 };
 const mock = [];
 
 export function fetchGoals() {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function(resolve, reject) {
     setTimeout(() => resolve(mock), 250);
   });
 }
 
 export function createGoal(goal) {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function(resolve, reject) {
     setTimeout(() => resolve(goal), 250);
   });
 }
 
 export function updateGoal(goal) {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function(resolve, reject) {
     setTimeout(() => resolve(goal), 250);
   });
 }
 
 export function deleteGoal(goal) {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function(resolve, reject) {
     setTimeout(() => resolve(goal), 250);
   });
 }

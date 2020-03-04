@@ -5,7 +5,6 @@ import Fetcher from "../../components/Fetcher";
 import ListPage from "../../components/ListPage";
 import Layout from "../../components/Layout";
 
-
 function Habits(props) {
   return (
     <Layout title="Habits">

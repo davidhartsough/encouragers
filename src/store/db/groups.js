@@ -24,25 +24,25 @@ const mock = [
 ];
 
 export function fetchGroups() {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function(resolve, reject) {
     setTimeout(() => resolve(mock), 250);
   });
 }
 
 export function createGroup(group) {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function(resolve, reject) {
     setTimeout(() => resolve(group), 250);
   });
 }
 
 export function updateGroup(group) {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function(resolve, reject) {
     setTimeout(() => resolve(group), 250);
   });
 }
 
 export function deleteGroup(group) {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function(resolve, reject) {
     setTimeout(() => resolve(group), 250);
   });
 }
