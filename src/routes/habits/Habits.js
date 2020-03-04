@@ -3,12 +3,16 @@ import { connect } from "react-redux";
 import { fetchHabits } from "../../store/actions/habits";
 import Fetcher from "../../components/Fetcher";
 import ListPage from "../../components/ListPage";
+import Layout from "../../components/Layout";
+
 
 function Habits(props) {
   return (
-    <Fetcher {...props}>
-      <ListPage type="habit" data={props.data} />
-    </Fetcher>
+    <Layout title="Habits">
+      <Fetcher {...props}>
+        <ListPage type="habit" data={props.data} />
+      </Fetcher>
+    </Layout>
   );
 }
 

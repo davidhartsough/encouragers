@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchHabits } from "../../store/actions/habits";
 import Fetcher from "../../components/Fetcher";
 import IdChecker from "../../components/IdChecker";
+import Layout from "../../components/Layout";
 
 function Habit({ habit }) {
   return <h1>Habit: {habit.name}</h1>;
@@ -10,11 +11,13 @@ function Habit({ habit }) {
 
 function Page(props) {
   return (
-    <Fetcher {...props}>
-      <IdChecker {...props} type="habit">
-        {habit => <Habit habit={habit} />}
-      </IdChecker>
-    </Fetcher>
+    <Layout title="Habit">
+      <Fetcher {...props}>
+        <IdChecker {...props} type="habit">
+          {habit => <Habit habit={habit} />}
+        </IdChecker>
+      </Fetcher>
+    </Layout>
   );
 }
 
