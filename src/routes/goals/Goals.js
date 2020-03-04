@@ -3,12 +3,15 @@ import { connect } from "react-redux";
 import { fetchGoals } from "../../store/actions/goals";
 import Fetcher from "../../components/Fetcher";
 import ListPage from "../../components/ListPage";
+import Layout from "../../components/Layout";
 
 function Goals(props) {
   return (
-    <Fetcher {...props}>
-      <ListPage type="goal" data={props.data} />
-    </Fetcher>
+    <Layout title="Goals">
+      <Fetcher {...props}>
+        <ListPage type="goal" data={props.data} />
+      </Fetcher>
+    </Layout>
   );
 }
 

@@ -5,7 +5,6 @@ const mockLeo = {
   profilePicture: null,
   public: false,
   connections: ["Stephanie1"]
-
 };
 const mockSteve = {
   username: "Steve1",
@@ -22,13 +21,10 @@ const mockStephanie = {
   profilePicture: null,
   public: false,
   connections: ["Steve1", "LeoWibbels"]
-
-
 };
 
-
 export function fetchProfile() {
-  return new Promise(function (resolve, reject) {
-    setTimeout(() => resolve(mock), 250);
+  return new Promise(function(resolve, reject) {
+    setTimeout(() => resolve(mockLeo), 250);
   });
 }

@@ -1,15 +1,12 @@
 import React from "react";
-import Nav from "../../components/Nav";
+import Layout from "../../components/Layout";
 
 export default function Home() {
   return (
-    <>
-      <Nav />
-      <section>
-        <header>
-          <h1 style={{ textAlign: "center" }}>Home</h1>
-        </header>
-      </section>
-    </>
+    <Layout title="Home">
+      <header>
+        <h1 style={{ textAlign: "center" }}>Home</h1>
+      </header>
+    </Layout>
   );
 }

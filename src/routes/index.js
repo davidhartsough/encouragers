@@ -10,6 +10,11 @@ import { Home } from "./home";
 import { Groups, Group, NewGroup } from "./groups";
 import { Goals, Goal, NewGoal } from "./goals";
 import { Habits, Habit, NewHabit } from "./habits";
+import { Connections, MyProfile, Profile } from "./profiles";
+import Accountability from "./Accountability";
+import Wellbeing from "./Wellbeing";
+import Notifications from "./Notifications";
+import Search from "./Search";
 
 function RouteParamHandler({ children }) {
   const { id } = useParams();
@@ -49,6 +54,27 @@ export default function Router() {
         </Route>
         <Route path="/new-habit">
           <NewHabit />
+        </Route>
+        <Route path="/connections">
+          <Connections />
+        </Route>
+        <Route path="/accountability">
+          <Accountability />
+        </Route>
+        <Route path="/well-being">
+          <Wellbeing />
+        </Route>
+        <Route path="/profile">
+          <MyProfile />
+        </Route>
+        <Route path="/p/:id">
+          <RouteParamHandler>{id => <Profile id={id} />}</RouteParamHandler>
+        </Route>
+        <Route path="/notifications">
+          <Notifications />
+        </Route>
+        <Route path="/search">
+          <Search />
         </Route>
         <Route path="*">
           <Redirect to="/" />
