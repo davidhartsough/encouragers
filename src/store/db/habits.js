@@ -1,6 +1,5 @@
 const mockReadingHabit = {
-  id: "4321",
-  active: true,
+  id: "reading123",
   groups: ["reading-club"],
   viewers: ["steve", "stephanie"],
   partners: ["stephanie"],
@@ -8,8 +7,7 @@ const mockReadingHabit = {
   tags: ["Reading", "Self-improvement", "Learning"],
   wellbeingDomains: ["Leisure"],
   resources: ["Hitchhiker's Guide to the Galaxy"],
-  meaning:
-    "Always wanted to read this book but never have. Excited about the humor.",
+  meaning: "Always wanted to read this book. Excited about the humor.",
   benifits: ["Improved literacy", "Time to self", "New perspective", "Funnier"],
   badHabit: null,
   cue: "After I brush my teeth and get in bed",
@@ -26,17 +24,18 @@ const mockReadingHabit = {
   strategy: "Put phone on DND.",
   measurementType: "duration",
   measurementUnit: "minutes",
-  measurement: 15
+  measurement: 15,
+  active: true,
+  num: 8
 };
 
 const mockWaterHabit = {
   id: "2314",
   name: "Drink water boy",
   active: false
-}
+};
 const mockRunningHabit = {
-  id: "1234",
-  active: false,
+  id: "running123",
   groups: ["running-club"],
   viewers: ["steve", "stephanie"],
   partners: ["stephanie"],
@@ -61,14 +60,12 @@ const mockRunningHabit = {
   strategy: "Use new shoes and my favorite podcast",
   measurementType: "unit",
   measurementUnit: "miles",
-  measurement: 1
+  measurement: 1,
+  active: true,
+  num: 12
 };
 
-const mock = [
-  mockReadingHabit,
-  mockRunningHabit,
-  mockWaterHabit
-];
+const mock = [mockReadingHabit, mockRunningHabit, mockWaterHabit];
 
 export function fetchHabits() {
   return new Promise(function(resolve, reject) {

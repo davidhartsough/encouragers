@@ -20,7 +20,8 @@ const mockRunningGoal = {
     "feeling of accomplisment",
     "big running legs",
     "booty",
-    "lose weight", "spend time outdoors"
+    "lose weight",
+    "spend time outdoors"
   ],
   subgoals: [
     {
@@ -269,9 +270,10 @@ const mockRunningGoal = {
   target: null,
   mainReward: "Go out to dinner at yoi-tomo all you can eat sushi",
   mainVerification: "Race Results",
-  completed: false
+  completed: false,
+  active: true
 };
-const mock = [];
+const mock = [mockRunningGoal];
 
 export function fetchGoals() {
   return new Promise(function(resolve, reject) {

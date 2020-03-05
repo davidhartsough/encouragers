@@ -6,6 +6,7 @@ const subgoal = {
   reward: "",
   timeSlots: []
 };
+
 const initialState = {
   groups: [],
   viewers: [],
