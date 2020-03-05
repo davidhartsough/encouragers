@@ -1,5 +1,5 @@
-const compareNum = (a, b) => a.num - b.num;
-const compareNumDesc = (a, b) => b.num - a.num;
+const compareActive = (a, b) => a.active - b.active;
+const compareActiveDesc = (a, b) => b.active - a.active;
 function compareNameDesc(a, b) {
   if (a.name < b.name) return -1;
   if (a.name > b.name) return 1;
@@ -24,8 +24,8 @@ export function filterSortItems(items, search, sort, ascending) {
           ? compareNameAsc
           : compareNameDesc
         : ascending
-        ? compareNum
-        : compareNumDesc;
+        ? compareActive
+        : compareActiveDesc;
     listItems = listItems.sort(sortComparison);
   }
   return listItems;

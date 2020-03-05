@@ -22,10 +22,10 @@ export default function List({ items, type }) {
         />
       </div>
       {listItems.length ? (
-        listItems.map(({ id, name, num }) => (
+        listItems.map(({ id, name, active }) => (
           <Link key={id} className="item" to={`/${type}/${id}`}>
             <span>{name}</span>
-            <span>{num}</span>
+            <span>{active}</span>
           </Link>
         ))
       ) : (

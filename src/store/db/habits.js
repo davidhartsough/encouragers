@@ -1,8 +1,10 @@
 const mockReadingHabit = {
+  id: "4321",
+  active: true,
   groups: ["reading-club"],
   viewers: ["steve", "stephanie"],
   partners: ["stephanie"],
-  habit: "Read 15 minutes a day",
+  name: "Read 15 minutes a day",
   tags: ["Reading", "Self-improvement", "Learning"],
   wellbeingDomains: ["Leisure"],
   resources: ["Hitchhiker's Guide to the Galaxy"],
@@ -27,11 +29,18 @@ const mockReadingHabit = {
   measurement: 15
 };
 
+const mockWaterHabit = {
+  id: "2314",
+  name: "Drink water boy",
+  active: false
+}
 const mockRunningHabit = {
+  id: "1234",
+  active: false,
   groups: ["running-club"],
   viewers: ["steve", "stephanie"],
   partners: ["stephanie"],
-  habit: "Run 1 mile a day",
+  name: "Run 1 mile a day",
   tags: ["Running", "Self-improvement", "Fitness"],
   wellbeingDomains: ["Exercise"],
   resources: ["Runner's Forum"],
@@ -56,21 +65,9 @@ const mockRunningHabit = {
 };
 
 const mock = [
-  {
-    id: "fdsa",
-    name: "Brush teeth",
-    num: 12
-  },
-  {
-    id: "reqw",
-    name: "Work out",
-    num: 8
-  },
-  {
-    id: "vcxz",
-    name: "Drink water",
-    num: 7
-  }
+  mockReadingHabit,
+  mockRunningHabit,
+  mockWaterHabit
 ];
 
 export function fetchHabits() {

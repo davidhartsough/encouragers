@@ -1,4 +1,5 @@
 const initialState = {
+  active: false,
   groups: [],
   viewers: [],
   partners: [],
