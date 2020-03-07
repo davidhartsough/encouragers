@@ -1,6 +1,4 @@
 const mockReadingHabit = {
-  id: "4321",
-  active: true,
   groups: ["reading-club"],
   viewers: ["steve", "stephanie"],
   partners: ["stephanie"],
@@ -9,7 +7,7 @@ const mockReadingHabit = {
   wellbeingDomains: ["Leisure"],
   resources: ["Hitchhiker's Guide to the Galaxy"],
   meaning:
-    "Always wanted to read this book but never have. Excited about the humor.",
+  "Always wanted to read this book but never have. Excited about the humor.",
   benifits: ["Improved literacy", "Time to self", "New perspective", "Funnier"],
   badHabit: null,
   cue: "After I brush my teeth and get in bed",
@@ -26,6 +24,8 @@ const mockReadingHabit = {
   strategy: "Put phone on DND.",
   measurementType: "duration",
   measurementUnit: "minutes",
+  id: "4321",
+  active: true,
   measurement: 15
 };
 

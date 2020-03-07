@@ -12,7 +12,7 @@ export default function SortBar({ sort, setSort, ascending, setAscending }) {
     }
   }
   const sortByName = () => sortByType("name");
-  const sortByActivity = () => sortByType("num");
+  const sortByActivity = () => sortByType("active");
   return (
     <div className="sort-bar">
       <div className="sort-item" onClick={sortByName}>

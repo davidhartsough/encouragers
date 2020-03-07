@@ -25,7 +25,7 @@ export default function List({ items, type }) {
         listItems.map(({ id, name, active }) => (
           <Link key={id} className="item" to={`/${type}/${id}`}>
             <span>{name}</span>
-            <span>{active}</span>
+            <span>{`${active}`}</span>
           </Link>
         ))
       ) : (

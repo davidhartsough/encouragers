@@ -5,6 +5,7 @@ import FormField from "../../components/FormField";
 import Button from "../../components/Button";
 import PageLoader from "../../components/PageLoader";
 import Header from "../../components/Header";
+import Layout from "../../components/Layout";
 
 const promiseOptions = inputValue =>
   new Promise(resolve => {
@@ -24,6 +25,8 @@ export default function NewGroup() {
   }
   if (step === 1) {
     return (
+      <Layout title="New Group">
+
       <div>
         <Header title="Create a group" />
         <FormField
@@ -31,12 +34,14 @@ export default function NewGroup() {
           placeholder="Group Name we will make it more spicy later you know"
           value={name}
           setValue={setName}
-        />
+          />
         <Button label="Next" onClick={proceed} />
       </div>
+      </Layout>
     );
   } else if (step === 2) {
     return (
+      <Layout title="New Group">
       <div>
         <Header title="Add members" />
         <p>Pick people to join your group</p>
@@ -49,9 +54,11 @@ export default function NewGroup() {
         />
         <Button label="Next" onClick={proceed} />
       </div>
+      </Layout>
     );
   } else if (step === 3) {
     return (
+      <Layout title="New Group">
       <div>
         <Header title="Choose admins" />
         <p>Who else should be an admin?</p>
@@ -63,6 +70,7 @@ export default function NewGroup() {
         />
         <Button label="Finish" onClick={finish} />
       </div>
+      </Layout>
     );
   } else {
     return <PageLoader />;

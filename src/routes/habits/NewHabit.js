@@ -1,5 +1,12 @@
-import React from "react";
+import React from 'react'
+import Layout from "../../components/Layout";
 
 export default function NewHabit() {
-  return <div>NewHabit</div>;
+  return (
+    <div>
+      <Layout title="New Habit">
+
+      </Layout>
+    </div>
+  )
 }
