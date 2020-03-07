@@ -8,7 +8,6 @@ import Layout from "../../components/Layout";
 function Groups(props) {
   return (
     <Layout title="My Groups">
-
     <Fetcher {...props}>
       <ListPage type="group" data={props.data} />
     </Fetcher>

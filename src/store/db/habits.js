@@ -33,10 +33,9 @@ const mockWaterHabit = {
   id: "2314",
   name: "Drink water boy",
   active: false
-}
+};
 const mockRunningHabit = {
-  id: "1234",
-  active: false,
+  id: "running123",
   groups: ["running-club"],
   viewers: ["steve", "stephanie"],
   partners: ["stephanie"],
@@ -61,14 +60,12 @@ const mockRunningHabit = {
   strategy: "Use new shoes and my favorite podcast",
   measurementType: "unit",
   measurementUnit: "miles",
-  measurement: 1
+  measurement: 1,
+  active: true,
+  num: 12
 };
 
-const mock = [
-  mockReadingHabit,
-  mockRunningHabit,
-  mockWaterHabit
-];
+const mock = [mockReadingHabit, mockRunningHabit, mockWaterHabit];
 
 export function fetchHabits() {
   return new Promise(function(resolve, reject) {
