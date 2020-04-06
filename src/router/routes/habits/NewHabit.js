@@ -11,48 +11,48 @@ import Typography from "@material-ui/core/Typography";
 import FormField from "../../components/FormField";
 import Async from "react-select/async";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%"
+    width: "100%",
   },
   button: {
     marginTop: theme.spacing(1),
-    marginRight: theme.spacing(1)
+    marginRight: theme.spacing(1),
   },
   actionsContainer: {
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
   },
   resetContainer: {
-    padding: theme.spacing(3)
-  }
+    padding: theme.spacing(3),
+  },
 }));
-const promiseOptions = inputValue =>
-  new Promise(resolve => {
+const promiseOptions = (inputValue) =>
+  new Promise((resolve) => {
     setTimeout(() => {
       resolve([
         { value: "Fitness", label: "Fitness" },
         { value: "Work", label: "Work" },
-        { value: "Mindfullness", label: "Mindfullness" }
+        { value: "Mindfullness", label: "Mindfullness" },
       ]);
     }, 1000);
   });
-const groupPromiseOptions = inputValue =>
-  new Promise(resolve => {
+const groupPromiseOptions = (inputValue) =>
+  new Promise((resolve) => {
     setTimeout(() => {
       resolve([
         { value: "Fitness", label: "Fitness" },
         { value: "Work", label: "Work" },
-        { value: "Mindfullness", label: "Mindfullness" }
+        { value: "Mindfullness", label: "Mindfullness" },
       ]);
     }, 1000);
   });
-const viewersPromiseOptions = inputValue =>
-  new Promise(resolve => {
+const viewersPromiseOptions = (inputValue) =>
+  new Promise((resolve) => {
     setTimeout(() => {
       resolve([
         { value: "Steve123", label: "Steve Albercore" },
         { value: "James", label: "James Vanderbutt" },
-        { value: "Alex37", label: "Alex The Cig Smoking Frenchy" }
+        { value: "Alex37", label: "Alex The Cig Smoking Frenchy" },
       ]);
     }, 1000);
   });
@@ -62,7 +62,7 @@ function getSteps() {
     "The Habit",
     "Groups, Partners, and Viewers",
     "Resources, Meaning, Benifits",
-    "Timing"
+    "Timing",
   ];
 }
 
@@ -91,7 +91,7 @@ export default function NewHabit() {
   const [strategy, setStrategy] = useState();
   const [measurementType, setMeasurementType] = useState();
   const [measurementUnits, setMeasurementUnits] = useState();
-  const getStepContent = step => {
+  const getStepContent = (step) => {
     switch (step) {
       case 1:
         return (
@@ -190,11 +190,11 @@ export default function NewHabit() {
   const steps = getSteps();
 
   const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
   const handleBack = () => {
-    setActiveStep(prevActiveStep => prevActiveStep - 1);
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
   const handleReset = () => {

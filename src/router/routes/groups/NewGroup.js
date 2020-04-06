@@ -7,8 +7,8 @@ import PageLoader from "../../components/PageLoader";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 
-const promiseOptions = inputValue =>
-  new Promise(resolve => {
+const promiseOptions = (inputValue) =>
+  new Promise((resolve) => {
     setTimeout(() => {
       resolve([{ value: "steve123", label: "Steve" }]);
     }, 1000);
@@ -26,50 +26,49 @@ export default function NewGroup() {
   if (step === 1) {
     return (
       <Layout title="New Group">
-
-      <div>
-        <Header title="Create a group" />
-        <FormField
-          label="Name"
-          placeholder="Group Name we will make it more spicy later you know"
-          value={name}
-          setValue={setName}
+        <div>
+          <Header title="Create a group" />
+          <FormField
+            label="Name"
+            placeholder="Group Name we will make it more spicy later you know"
+            value={name}
+            setValue={setName}
           />
-        <Button label="Next" onClick={proceed} />
-      </div>
+          <Button label="Next" onClick={proceed} />
+        </div>
       </Layout>
     );
   } else if (step === 2) {
     return (
       <Layout title="New Group">
-      <div>
-        <Header title="Add members" />
-        <p>Pick people to join your group</p>
-        <Async
-          isMulti
-          cacheOptions
-          loadOptions={promiseOptions}
-          values={members}
-          onChange={setMembers}
-        />
-        <Button label="Next" onClick={proceed} />
-      </div>
+        <div>
+          <Header title="Add members" />
+          <p>Pick people to join your group</p>
+          <Async
+            isMulti
+            cacheOptions
+            loadOptions={promiseOptions}
+            values={members}
+            onChange={setMembers}
+          />
+          <Button label="Next" onClick={proceed} />
+        </div>
       </Layout>
     );
   } else if (step === 3) {
     return (
       <Layout title="New Group">
-      <div>
-        <Header title="Choose admins" />
-        <p>Who else should be an admin?</p>
-        <Select
-          isMulti
-          options={members}
-          values={admins}
-          onChange={setAdmins}
-        />
-        <Button label="Finish" onClick={finish} />
-      </div>
+        <div>
+          <Header title="Choose admins" />
+          <p>Who else should be an admin?</p>
+          <Select
+            isMulti
+            options={members}
+            values={admins}
+            onChange={setAdmins}
+          />
+          <Button label="Finish" onClick={finish} />
+        </div>
       </Layout>
     );
   } else {

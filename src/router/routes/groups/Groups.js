@@ -8,9 +8,9 @@ import Layout from "../../components/Layout";
 function Groups(props) {
   return (
     <Layout title="My Groups">
-    <Fetcher {...props}>
-      <ListPage type="group" data={props.data} />
-    </Fetcher>
+      <Fetcher {...props}>
+        <ListPage type="group" data={props.data} />
+      </Fetcher>
     </Layout>
   );
 }
@@ -18,11 +18,11 @@ function Groups(props) {
 const mapStateToProps = ({ groups: { hasFetched, loading, data } }) => ({
   hasFetched,
   loading,
-  data
+  data,
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchData: () => dispatch(fetchGroups())
+const mapDispatchToProps = (dispatch) => ({
+  fetchData: () => dispatch(fetchGroups()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Groups);

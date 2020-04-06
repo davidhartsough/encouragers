@@ -12,7 +12,7 @@ function Page(props) {
   return (
     <Fetcher {...props}>
       <IdChecker {...props} type="group">
-        {group => <Group group={group} />}
+        {(group) => <Group group={group} />}
       </IdChecker>
     </Fetcher>
   );
@@ -21,11 +21,11 @@ function Page(props) {
 const mapStateToProps = ({ groups: { hasFetched, loading, data } }) => ({
   hasFetched,
   loading,
-  data
+  data,
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchData: () => dispatch(fetchGroups())
+const mapDispatchToProps = (dispatch) => ({
+  fetchData: () => dispatch(fetchGroups()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Page);

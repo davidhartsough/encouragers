@@ -1,7 +1,7 @@
 import React from "react";
 import StoreProvider from "./store";
 import Authenticator from "./auth";
-import Router from "./routes";
+import Router from "./router";
 
 export default function App() {
   return (

@@ -14,7 +14,7 @@ function Page(props) {
     <Layout title="Habit">
       <Fetcher {...props}>
         <IdChecker {...props} type="habit">
-          {habit => <Habit habit={habit} />}
+          {(habit) => <Habit habit={habit} />}
         </IdChecker>
       </Fetcher>
     </Layout>
@@ -24,11 +24,11 @@ function Page(props) {
 const mapStateToProps = ({ habits: { hasFetched, loading, data } }) => ({
   hasFetched,
   loading,
-  data
+  data,
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchData: () => dispatch(fetchHabits())
+const mapDispatchToProps = (dispatch) => ({
+  fetchData: () => dispatch(fetchHabits()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Page);

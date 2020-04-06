@@ -18,11 +18,11 @@ function Habits(props) {
 const mapStateToProps = ({ habits: { hasFetched, loading, data } }) => ({
   hasFetched,
   loading,
-  data
+  data,
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchData: () => dispatch(fetchHabits())
+const mapDispatchToProps = (dispatch) => ({
+  fetchData: () => dispatch(fetchHabits()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Habits);

@@ -18,11 +18,11 @@ function Goals(props) {
 const mapStateToProps = ({ goals: { hasFetched, loading, data } }) => ({
   hasFetched,
   loading,
-  data
+  data,
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchData: () => dispatch(fetchGoals())
+const mapDispatchToProps = (dispatch) => ({
+  fetchData: () => dispatch(fetchGoals()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Goals);

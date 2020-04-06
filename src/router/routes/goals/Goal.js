@@ -12,7 +12,7 @@ function Page(props) {
   return (
     <Fetcher {...props}>
       <IdChecker {...props} type="goal">
-        {goal => <Goal goal={goal} />}
+        {(goal) => <Goal goal={goal} />}
       </IdChecker>
     </Fetcher>
   );
@@ -21,11 +21,11 @@ function Page(props) {
 const mapStateToProps = ({ goals: { hasFetched, loading, data } }) => ({
   hasFetched,
   loading,
-  data
+  data,
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchData: () => dispatch(fetchGoals())
+const mapDispatchToProps = (dispatch) => ({
+  fetchData: () => dispatch(fetchGoals()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Page);

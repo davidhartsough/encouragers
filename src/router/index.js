@@ -4,17 +4,30 @@ import {
   Switch,
   Route,
   Redirect,
-  useParams
+  useParams,
 } from "react-router-dom";
-import { Home } from "./home";
-import { Groups, Group, NewGroup } from "./groups";
-import { Goals, Goal, NewGoal } from "./goals";
-import { Habits, Habit, NewHabit } from "./habits";
-import { Connections, MyProfile, Profile } from "./profiles";
-import Accountability from "./Accountability";
-import Wellbeing from "./Wellbeing";
-import Notifications from "./Notifications";
-import Search from "./Search";
+import {
+  Home,
+  Groups,
+  Group,
+  NewGroup,
+  EditGroup,
+  Goals,
+  Goal,
+  NewGoal,
+  EditGoal,
+  Habits,
+  Habit,
+  NewHabit,
+  EditHabit,
+  Connections,
+  MyProfile,
+  Profile,
+  Accountability,
+  Wellbeing,
+  Notifications,
+  Search,
+} from "./routes";
 
 function RouteParamHandler({ children }) {
   const { id } = useParams();
@@ -32,28 +45,37 @@ export default function Router() {
           <Groups />
         </Route>
         <Route path="/group/:id">
-          <RouteParamHandler>{id => <Group id={id} />}</RouteParamHandler>
+          <RouteParamHandler>{(id) => <Group id={id} />}</RouteParamHandler>
         </Route>
         <Route path="/new-group">
           <NewGroup />
+        </Route>
+        <Route path="/edit-group/:id">
+          <RouteParamHandler>{(id) => <EditGroup id={id} />}</RouteParamHandler>
         </Route>
         <Route path="/goals">
           <Goals />
         </Route>
         <Route path="/goal/:id">
-          <RouteParamHandler>{id => <Goal id={id} />}</RouteParamHandler>
+          <RouteParamHandler>{(id) => <Goal id={id} />}</RouteParamHandler>
         </Route>
         <Route path="/new-goal">
           <NewGoal />
+        </Route>
+        <Route path="/edit-goal/:id">
+          <RouteParamHandler>{(id) => <EditGoal id={id} />}</RouteParamHandler>
         </Route>
         <Route path="/habits">
           <Habits />
         </Route>
         <Route path="/habit/:id">
-          <RouteParamHandler>{id => <Habit id={id} />}</RouteParamHandler>
+          <RouteParamHandler>{(id) => <Habit id={id} />}</RouteParamHandler>
         </Route>
         <Route path="/new-habit">
           <NewHabit />
+        </Route>
+        <Route path="/edit-habit/:id">
+          <RouteParamHandler>{(id) => <EditHabit id={id} />}</RouteParamHandler>
         </Route>
         <Route path="/connections">
           <Connections />
@@ -68,7 +90,7 @@ export default function Router() {
           <MyProfile />
         </Route>
         <Route path="/p/:id">
-          <RouteParamHandler>{id => <Profile id={id} />}</RouteParamHandler>
+          <RouteParamHandler>{(id) => <Profile id={id} />}</RouteParamHandler>
         </Route>
         <Route path="/notifications">
           <Notifications />
