@@ -1,22 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchGoals } from "../../store/actions/goals";
-import Fetcher from "../../components/Fetcher";
-import ListPage from "../../components/ListPage";
-import Layout from "../../components/Layout";
+import { fetchGoals } from "../../../store/actions/goals";
+import ListPage from "../../../components/list/ListPage";
 
 function Goals(props) {
-  return (
-    <Layout title="Goals">
-      <Fetcher {...props}>
-        <ListPage type="goal" data={props.data} />
-      </Fetcher>
-    </Layout>
-  );
+  return <ListPage type="Goal" {...props} />;
 }
 
-const mapStateToProps = ({ goals: { hasFetched, loading, data } }) => ({
-  hasFetched,
+const mapStateToProps = ({ goals: { loading, data } }) => ({
   loading,
   data,
 });

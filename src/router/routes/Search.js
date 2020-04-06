@@ -1,5 +1,10 @@
 import React from "react";
+import Layout from "../../components/layout/Layout";
 
 export default function Search() {
-  return <div>Search</div>;
+  return (
+    <Layout title="Search">
+      <p>Search</p>
+    </Layout>
+  );
 }

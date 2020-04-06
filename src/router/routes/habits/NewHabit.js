@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Layout from "../../components/Layout";
 import { makeStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
@@ -8,8 +7,15 @@ import StepContent from "@material-ui/core/StepContent";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import FormField from "../../components/FormField";
 import Async from "react-select/async";
+import Layout from "../../../components/layout/Layout";
+import TextField from "@material-ui/core/TextField";
+
+// TODO: Change up this FormField
+function FormField({ label, value, setValue }) {
+  const onChange = ({ target }) => setValue(target.value);
+  return <TextField label={label} value={value} onChange={onChange} />;
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -96,19 +102,13 @@ export default function NewHabit() {
       case 1:
         return (
           <div>
-            <FormField
-              label=" Group Name"
-              placeholder="Group Name"
-              value={groups}
-              setValue={setGroups}
-            />
+            <FormField label="Group Name" value={groups} setValue={setGroups} />
             <p>Privacy Setting</p>
             <Async
               isMulti
               cacheOptions
               loadOptions={viewersPromiseOptions}
               label="Viewers"
-              placeholder="Viewers"
               value={viewers}
               onChange={setViewers}
             />
@@ -118,7 +118,6 @@ export default function NewHabit() {
               cacheOptions
               loadOptions={viewersPromiseOptions}
               label="Partners"
-              placeholder="Partners"
               value={partners}
               onChange={setPartners}
             />
@@ -127,19 +126,13 @@ export default function NewHabit() {
       case 0:
         return (
           <div>
-            <FormField
-              label="Name"
-              placeholder="Habit Name"
-              value={habit}
-              setValue={setHabit}
-            />
+            <FormField label="Name" value={habit} setValue={setHabit} />
             <p>Habit Tags</p>
             <Async
               isMulti
               cacheOptions
               loadOptions={promiseOptions}
               label="Tags"
-              placeholder="Habit Tags"
               value={tags}
               onChange={setTags}
             />
@@ -149,7 +142,6 @@ export default function NewHabit() {
               cacheOptions
               loadOptions={promiseOptions}
               label="Domains of Wellbeing"
-              placeholder="Domains of Wellbeing"
               value={wellbeingDomains}
               onChange={setWelleingDomains}
             />
@@ -158,18 +150,8 @@ export default function NewHabit() {
       case 2:
         return (
           <div>
-            <FormField
-              label="Name"
-              placeholder="Habit Name"
-              value={habit}
-              setValue={setHabit}
-            />
-            <FormField
-              label="Name"
-              placeholder="Habit Name"
-              value={habit}
-              setValue={setHabit}
-            />
+            <FormField label="Name" value={habit} setValue={setHabit} />
+            <FormField label="Name" value={habit} setValue={setHabit} />
           </div>
         );
       case 3:

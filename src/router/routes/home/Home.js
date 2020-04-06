@@ -1,12 +1,10 @@
 import React from "react";
-import Layout from "../../components/Layout";
+import Layout from "../../../components/layout/Layout";
 
 export default function Home() {
   return (
     <Layout title="Home">
-      <header>
-        <h1 style={{ textAlign: "center" }}>Home</h1>
-      </header>
+      <p>Home?!</p>
     </Layout>
   );
 }

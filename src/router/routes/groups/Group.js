@@ -1,25 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchGroups } from "../../store/actions/groups";
-import Fetcher from "../../components/Fetcher";
-import IdChecker from "../../components/IdChecker";
+import { fetchGroups } from "../../../store/actions/groups";
+import DetailPage from "../../../components/detail/DetailPage";
 
 function Group({ group }) {
-  return <h1>Group: {group.name}</h1>;
+  return <h1>{group.title}</h1>;
 }
 
 function Page(props) {
   return (
-    <Fetcher {...props}>
-      <IdChecker {...props} type="group">
-        {(group) => <Group group={group} />}
-      </IdChecker>
-    </Fetcher>
+    <DetailPage {...props} title="Group">
+      {(group) => <Group group={group} />}
+    </DetailPage>
   );
 }
 
-const mapStateToProps = ({ groups: { hasFetched, loading, data } }) => ({
-  hasFetched,
+const mapStateToProps = ({ groups: { loading, data } }) => ({
   loading,
   data,
 });

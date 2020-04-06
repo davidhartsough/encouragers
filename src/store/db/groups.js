@@ -1,48 +1,48 @@
 const mockGroup = {
   id: "running-group",
-  name: "Running Group",
+  title: "Running Group",
   members: ["LeoWibbels", "Steve1", "Stephanie1"],
-  admins: ["LeoWibbels"]
+  admins: ["LeoWibbels"],
 };
 
 const mock = [
   {
     id: "asdf",
-    name: "Cool Group",
-    num: 12
+    title: "Cool Group",
+    num: 12,
   },
   {
     id: "qwer",
-    name: "Family",
-    num: 8
+    title: "Family",
+    num: 8,
   },
   {
     id: "zxcv",
-    name: "Roommates",
-    num: 7
-  }
+    title: "Roommates",
+    num: 7,
+  },
 ];
 
 export function fetchGroups() {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     setTimeout(() => resolve(mock), 250);
   });
 }
 
 export function createGroup(group) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     setTimeout(() => resolve(group), 250);
   });
 }
 
 export function updateGroup(group) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     setTimeout(() => resolve(group), 250);
   });
 }
 
 export function deleteGroup(group) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     setTimeout(() => resolve(group), 250);
   });
 }

@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import TopBar from "./TopBar";
+import { NavLink } from "react-router-dom";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import { NavLink } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import TopBar from "./TopBar";
 
-const useStyles = makeStyles(theme => ({
-  toolbar: theme.mixins.toolbar
+const useStyles = makeStyles((theme) => ({
+  toolbar: theme.mixins.toolbar,
+  drawerPaper: {
+    width: 224,
+  },
 }));
 
 export default function Layout({ title, children }) {
@@ -25,6 +28,9 @@ export default function Layout({ title, children }) {
           open={open}
           onClose={closeDrawer}
           ModalProps={{ keepMounted: true }}
+          classes={{
+            paper: classes.drawerPaper,
+          }}
         >
           <List>
             {[
@@ -36,8 +42,8 @@ export default function Layout({ title, children }) {
               "Well-being",
               "Profile",
               "Search",
-              "Notifications"
-            ].map(i => (
+              "Notifications",
+            ].map((i) => (
               <NavLink key={i} to={`/${i.toLowerCase()}`}>
                 <ListItem button>
                   <ListItemText primary={i} />

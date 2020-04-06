@@ -1,22 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchGroups } from "../../store/actions/groups";
-import Fetcher from "../../components/Fetcher";
-import ListPage from "../../components/ListPage";
-import Layout from "../../components/Layout";
+import { fetchGroups } from "../../../store/actions/groups";
+import ListPage from "../../../components/list/ListPage";
 
 function Groups(props) {
-  return (
-    <Layout title="My Groups">
-      <Fetcher {...props}>
-        <ListPage type="group" data={props.data} />
-      </Fetcher>
-    </Layout>
-  );
+  return <ListPage type="Group" {...props} />;
 }
 
-const mapStateToProps = ({ groups: { hasFetched, loading, data } }) => ({
-  hasFetched,
+const mapStateToProps = ({ groups: { loading, data } }) => ({
   loading,
   data,
 });

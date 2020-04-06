@@ -1,25 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchGoals } from "../../store/actions/goals";
-import Fetcher from "../../components/Fetcher";
-import IdChecker from "../../components/IdChecker";
+import { fetchGoals } from "../../../store/actions/goals";
+import DetailPage from "../../../components/detail/DetailPage";
 
 function Goal({ goal }) {
-  return <h1>Goal: {goal.name}</h1>;
+  return <h1>{goal.title}</h1>;
 }
 
 function Page(props) {
   return (
-    <Fetcher {...props}>
-      <IdChecker {...props} type="goal">
-        {(goal) => <Goal goal={goal} />}
-      </IdChecker>
-    </Fetcher>
+    <DetailPage {...props} title="Goal">
+      {(goal) => <Goal goal={goal} />}
+    </DetailPage>
   );
 }
 
-const mapStateToProps = ({ goals: { hasFetched, loading, data } }) => ({
-  hasFetched,
+const mapStateToProps = ({ goals: { loading, data } }) => ({
   loading,
   data,
 });

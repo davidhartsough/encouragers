@@ -1,28 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchHabits } from "../../store/actions/habits";
-import Fetcher from "../../components/Fetcher";
-import IdChecker from "../../components/IdChecker";
-import Layout from "../../components/Layout";
+import { fetchHabits } from "../../../store/actions/habits";
+import DetailPage from "../../../components/detail/DetailPage";
 
 function Habit({ habit }) {
-  return <h1>Habit: {habit.name}</h1>;
+  return <h1>{habit.title}</h1>;
 }
 
 function Page(props) {
   return (
-    <Layout title="Habit">
-      <Fetcher {...props}>
-        <IdChecker {...props} type="habit">
-          {(habit) => <Habit habit={habit} />}
-        </IdChecker>
-      </Fetcher>
-    </Layout>
+    <DetailPage {...props} title="Habit">
+      {(habit) => <Habit habit={habit} />}
+    </DetailPage>
   );
 }
 
-const mapStateToProps = ({ habits: { hasFetched, loading, data } }) => ({
-  hasFetched,
+const mapStateToProps = ({ habits: { loading, data } }) => ({
   loading,
   data,
 });

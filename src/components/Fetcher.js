@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import PageLoader from "./PageLoader";
+import Loader from "./loaders/Loader";
 
-export default function Fetcher({ hasFetched, loading, fetchData, children }) {
+export default function Fetcher({ loading, fetchData, children }) {
   useEffect(() => {
-    fetchData(hasFetched);
-  }, [hasFetched, fetchData]);
-  if (loading) return <PageLoader />;
+    fetchData();
+  }, [fetchData]);
+  if (loading) return <Loader />;
   return children;
 }

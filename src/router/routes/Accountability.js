@@ -1,5 +1,10 @@
 import React from "react";
+import Layout from "../../components/layout/Layout";
 
 export default function Accountability() {
-  return <div>Accountability</div>;
+  return (
+    <Layout title="Accountability">
+      <p>Accountability</p>
+    </Layout>
+  );
 }

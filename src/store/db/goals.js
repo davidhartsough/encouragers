@@ -4,13 +4,14 @@ const subgoal = {
   dateTime: null,
   verification: "",
   reward: "",
-  timeSlots: []
+  timeSlots: [],
 };
 const mockRunningGoal = {
+  id: "_mockrunninggoal_",
   groups: ["runningClub"],
   viewers: ["steve", "stephanie"],
   partners: ["steve"],
-  goal: "Run Robie Creek",
+  title: "Run Robie Creek",
   tags: ["running", "fitness"],
   wellbeingDomains: ["exercise", "accomplishment"],
   resources: ["runnersworld.com"],
@@ -21,7 +22,7 @@ const mockRunningGoal = {
     "big running legs",
     "booty",
     "lose weight",
-    "spend time outdoors"
+    "spend time outdoors",
   ],
   subgoals: [
     {
@@ -36,8 +37,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-02",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run hills",
@@ -45,8 +46,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-03",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run",
@@ -54,8 +55,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-04",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run hills",
@@ -63,8 +64,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-05",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run hills",
@@ -72,15 +73,15 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-05",
-            completed: false
-          }
-        }
+            completed: false,
+          },
+        },
       ],
       dateTime: "2020-03-07T12:00:00",
       verification: "",
       reward: "no",
       timeSlots: null,
-      completed: false
+      completed: false,
     },
     {
       name: "Week 2",
@@ -94,8 +95,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-09",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run hills",
@@ -103,8 +104,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-10",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run",
@@ -112,8 +113,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-11",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run hills",
@@ -121,8 +122,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-12",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run hills",
@@ -130,15 +131,15 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-14",
-            completed: false
-          }
-        }
+            completed: false,
+          },
+        },
       ],
       dateTime: "2020-03-15T12:00:00",
       verification: "",
       reward: "no",
       timeSlots: null,
-      completed: false
+      completed: false,
     },
     {
       name: "Week 3",
@@ -152,8 +153,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-16",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run hills",
@@ -161,8 +162,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-17",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run",
@@ -170,8 +171,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-18",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run hills",
@@ -179,8 +180,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-19",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run hills",
@@ -188,15 +189,15 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-21",
-            completed: false
-          }
-        }
+            completed: false,
+          },
+        },
       ],
       dateTime: "2020-03-22T12:00:00",
       verification: "",
       reward: "no",
       timeSlots: null,
-      completed: false
+      completed: false,
     },
     {
       name: "Week 4",
@@ -210,8 +211,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-23",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run hills",
@@ -219,8 +220,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-24",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run",
@@ -228,8 +229,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-25",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run hills",
@@ -237,8 +238,8 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-26",
-            completed: false
-          }
+            completed: false,
+          },
         },
         {
           name: "easy 35 min run hills",
@@ -246,16 +247,16 @@ const mockRunningGoal = {
             startTime: "16:00",
             endTime: "16:40",
             date: "2020-03-28",
-            completed: false
-          }
-        }
+            completed: false,
+          },
+        },
       ],
       dateTime: "2020-03-29T12:00:00",
       verification: "",
       reward: "no",
       timeSlots: null,
-      completed: false
-    }
+      completed: false,
+    },
   ],
   hindrances: ["weather", "injury", "bad-gear", "fatigue", "Time Commitment"],
   endDate: "2020-03-31",
@@ -271,30 +272,30 @@ const mockRunningGoal = {
   mainReward: "Go out to dinner at yoi-tomo all you can eat sushi",
   mainVerification: "Race Results",
   completed: false,
-  active: true
+  active: true,
 };
 const mock = [mockRunningGoal];
 
 export function fetchGoals() {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     setTimeout(() => resolve(mock), 250);
   });
 }
 
 export function createGoal(goal) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     setTimeout(() => resolve(goal), 250);
   });
 }
 
 export function updateGoal(goal) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     setTimeout(() => resolve(goal), 250);
   });
 }
 
 export function deleteGoal(goal) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     setTimeout(() => resolve(goal), 250);
   });
 }

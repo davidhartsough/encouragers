@@ -1,22 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchHabits } from "../../store/actions/habits";
-import Fetcher from "../../components/Fetcher";
-import ListPage from "../../components/ListPage";
-import Layout from "../../components/Layout";
+import { fetchHabits } from "../../../store/actions/habits";
+import ListPage from "../../../components/list/ListPage";
 
 function Habits(props) {
-  return (
-    <Layout title="Habits">
-      <Fetcher {...props}>
-        <ListPage type="habit" data={props.data} />
-      </Fetcher>
-    </Layout>
-  );
+  return <ListPage type="Habit" {...props} />;
 }
 
-const mapStateToProps = ({ habits: { hasFetched, loading, data } }) => ({
-  hasFetched,
+const mapStateToProps = ({ habits: { loading, data } }) => ({
   loading,
   data,
 });
